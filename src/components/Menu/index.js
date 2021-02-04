@@ -1,19 +1,36 @@
 import React from "react";
 import { Text } from "react-native";
-import { Container, Code, Nav, NavItem, NavText, SignOutButton, SignOutButtonText } from "./styles";
+import {
+  Container,
+  Code,
+  Nav,
+  NavItem,
+  NavText,
+  SignOutButton,
+  SignOutButtonText,
+} from "./styles";
 import { MaterialIcons } from "@expo/vector-icons";
-import { QRCode } from 'react-native-custom-qr-codes-expo';
+import { QRCode } from "react-native-custom-qr-codes-expo";
 
-export default function Menu() {
+export default function Menu({ translateY }) {
+
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: translateY.interpolate({
+          inputRange: [0, 150],
+          outputRange: [0, 1],
+
+        }),
+      }}
+    >
       <Code>
-        <QRCode codeStyle="diamond"
+        <QRCode
+          codeStyle="diamond"
           color="#8B10AE"
           content="http://www.rodolfopeixoto.com.br"
           size={80}
-
-          />
+        />
       </Code>
       <Nav>
         <NavItem>
@@ -34,9 +51,7 @@ export default function Menu() {
         </NavItem>
       </Nav>
 
-      <SignOutButton
-        onPress={ () => {} }
-      >
+      <SignOutButton onPress={() => {}}>
         <SignOutButtonText>Sair do App</SignOutButtonText>
       </SignOutButton>
     </Container>
