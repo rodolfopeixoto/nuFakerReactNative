@@ -14,7 +14,9 @@ import {
   Annotation,
 } from "./styles";
 import Menu from "../../components/Menu";
-
+import { Animated } from "react-native";
+import { PanGestureHandler, State } from "react-native-gesture-handler";
+PanGestureHandler
 export default function Main() {
   return (
     <Container>
@@ -29,11 +31,11 @@ export default function Main() {
           </CardHeader>
           <CardContent>
             <Title>Saldo disponível</Title>
-            <Description>R$1.030.611,65</Description>
+            <Description>R$1.430.611,65</Description>
           </CardContent>
           <CardFooter>
             <Annotation>
-              Transferência de 1.030.611,65 recebida de Diego Schell Fernandes hoje
+              Transferência de 1.030.611,65 recebida de Microsoft Brasil SA hoje
               às 06:00h
             </Annotation>
           </CardFooter>
